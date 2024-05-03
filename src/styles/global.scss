@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: rgb(71,191,223);
+    background: linear-gradient(180deg, rgba(71,191,223,1) 0%, rgba(74,145,255,1) 100%);
+    color: #fff;
+    font-family: "Overpass", sans-serif;
+    padding: 20px;
+}
+
+header {
+    margin-top: 20px;
+    height: 37px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+footer {
+    width: calc(100% - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    color: red;
+    font-size: 20px;
+    background-color: rgba(218, 18, 18, .3);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
+
+    @media screen and (max-width: 468px) {
+        display: none;
+    }
+}
+
+.app {
+    max-width: 428px;
+    height: 900px;
+    margin: 0 auto;
+    border: 2px solid rgba(0,0,0, 0.6);
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+    @media screen and (max-width: 468px) {
+        border: 0;
+        box-shadow: none;
+    }
+}
+
+.ct-location {
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    gap: 19px;
+}
+
+.ct-icon{
+    max-width: 250px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ct-display{
+    border: 2px solid rgba(255,255,255,0.6);
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.3);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .temp-display{
+        font-size: 3rem;
+    }
+
+    .description {
+        font-size: 1.3rem;
+    }
+
+    table {
+        tbody {
+            tr {
+                td{
+                    padding-right: 15px;
+                    &:nth-child(4) {
+                        padding-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
