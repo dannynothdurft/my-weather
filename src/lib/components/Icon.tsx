@@ -8,11 +8,13 @@ interface IconProps {
 const Icon: FC<IconProps> = ({ icon, alt }) => {
   return (
     <div className="ct-icon">
-      <img
-        width={"200px"}
-        src={`http://openweathermap.org/img/w/${icon}.png`}
-        alt={alt}
-      />
+      {icon ? (
+        <img
+          width={"200px"}
+          src={`http://openweathermap.org/img/w/${icon}.png`}
+          alt={alt}
+        />
+      ) : null}
     </div>
   );
 };

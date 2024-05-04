@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import env from "react-dotenv";
 
+import { useSelector } from "react-redux";
+
 // Components
 import { Header, Icon, Display, Footer } from "./";
 
 function App() {
-  const city = "Hamburg";
-  const country = "DE";
+  const { city, country } = useSelector((state) => (state as any).location);
 
   const [currentWeather, setCurrentWeather] = useState<any>();
   const [coordinate, setCoordinate] = useState<{
@@ -41,14 +42,14 @@ function App() {
     }, 1);
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, [city, country]);
 
   useEffect(() => {
     if (coordinate.lat !== "" && coordinate.lon !== "") {
       const getCw = async () => {
         try {
           const cw = await axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${coordinate.lat}&lon=${coordinate.lon}&appid=${env.API_KEY}&units=metric&lang=de`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${coordinate.lat}&lon=${coordinate.lon}&appid=${env.API_KEY}&units=metric&lang=DE`
           );
 
           if (cw.status === 200) {

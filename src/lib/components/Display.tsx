@@ -7,8 +7,6 @@ interface DisplayProps {
 }
 
 const Display: FC<DisplayProps> = ({ data }) => {
-  console.log("Display", data);
-
   const currentDate: ReactNode = (
     <>
       {new Intl.DateTimeFormat("de-DE", {
