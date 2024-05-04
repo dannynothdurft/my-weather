@@ -23,7 +23,7 @@ function App() {
     const getCo = async () => {
       try {
         const co = await axios.get(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&appid=${env.API_KEY}`
+          `https://api.openweathermap.org/geo/1.0/direct?q=${city},${country}&appid=${env.API_KEY}`
         );
 
         if (co.status === 200) {
